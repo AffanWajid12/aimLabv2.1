@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"/> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indextest.css') }}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="indextest.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/aipng.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            <div class="optionsNav">Gen-AI</div>
+          </a>
+        </div>
+      </nav>
+
+      <div class="prompt">
+        <div class="welcome">How can I help you today?</div>
+        <input id="youtube-url" placeholder="Enter your Youtube Url"/>
+        <div class="promptSuggest">Summarize Video to video 🎥 -> 🎥</div>
+        <div class="promptSuggest">Get Useful insights from the video 🚀🚀🚀</div>
+        <div class="promptSuggest">Summarize Video to text 🎥 -> 🖹</div>
+        <br>
+        <section class="options">
+            <div class="option">Summarize</div>
+            <div class="option">Q&A</div>
+            <div class="option">Pros and Cons</div>
+            <div class="option">Compare</div>
+        </section>
+        <form id="prompt-form">
+        <div class="wrapper">
+          <input class="prompttext" placeholder="Type Your Prompt"/>
+          <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 12l14 0"></path>
+                <path d="M13 18l6 -6"></path>
+                <path d="M13 6l6 6"></path>
+            </svg>
+          </button>
+        </div>
+        </form>
+        <div class="mt-5" id="contentContainer" style="color: aliceblue">
+          <!-- New content will be appended here -->
+        </div>
+
+      </div>
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      document.getElementById('prompt-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const youtubeUrl = document.getElementById('youtube-url').value;
+        const promptText = document.querySelector('.prompttext').value;
+        
+        const response = await fetch('/generic', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            yturl: youtubeUrl,
+            prompt: promptText
+          })
+        });
+        
+        const result = await response.json();
+
+        sessionStorage.setItem('result', JSON.stringify(result));
+        window.location.href = '/chat';
+        //  displayContent(result);  // Do something with the result
+      });
+      
+    </script>
+  </body>
+</html>

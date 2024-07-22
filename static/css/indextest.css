@@ -1,0 +1,184 @@
+
+.optionsNav{
+    margin-left: 20px;
+    display:inline;
+    color:darkgreen;
+    font-weight: bold;
+}
+
+.navbar-custom {
+    background-color: #000000 !important; /* Black background color */
+    border-color: #000000 !important; /* Black border color */
+}
+
+
+ellipse{
+    /* Ellipse 137 */
+
+position: absolute;
+width: 505.01px;
+height: 421.71px;
+left: 1065.05px;
+top: -116.77px;
+
+background: #6DFD49;
+filter: blur(334.688px);
+
+}
+body{
+    background-color: #000000;
+    overflow-x: hidden; 
+}
+.prompt{
+
+position: absolute;
+width: 65vw;
+height: 85vh;
+left:18vw;
+top: 140%;
+
+background: #262627;
+border-radius: 29.75px;
+
+}
+.welcome{
+    text-align: center;
+    position: relative;
+    color:white;
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: 220%;
+}
+#youtube-url{
+    margin-left: 25%;
+    margin-top:3%;
+    /* Rectangle 367 */
+    margin-right: 25%;
+    width:50%;
+    height:10%;
+    background: #D9D9D9;
+    box-shadow: 0px 2.975px 2.975px rgba(0, 0, 0, 0.25);
+    border-radius: 28.5938px;
+    padding: 2%;
+}
+
+::placeholder {
+    text-align: center; 
+    font-size: large;
+    font-weight: bold;
+ }
+
+.promptSuggest{
+    /* Rectangle 361 */
+    text-align: center; 
+    font-size: 2vh;
+    font-weight: bold;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 6%;
+    width: 25%;
+    height: 30%;
+    display: inline-flex;
+    background: #656161;
+    border-radius: 18.5938px;
+    padding: 4%;
+    overflow: hidden; 
+    vertical-align:top;
+}
+
+.options{
+    color:white;
+    margin-top: 5%;
+    margin-left: 23%;
+}
+.option{
+
+    color: #6DFD49;
+    margin-right:10%;
+    display:inline;
+    font-size: larger;
+}
+
+
+/* .prompttext{
+    margin-left: 5%;
+    margin-top:2%;
+    margin-right: 25%;
+    width:90%;
+    height:10%;
+    background: #D9D9D9;
+    box-shadow: 0px 2.975px 2.975px rgba(0, 0, 0, 0.25);
+    border-radius: 28.5938px;
+    padding: 2%;    
+
+} */
+
+body {
+    position: relative;
+    background-color: #000000; /* Black background */
+    margin: 0;
+    padding: 0; /* Prevent scrollbars from appearing */
+}
+
+body::before, body::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(109, 253, 73, 0.7); /* Green color with opacity */
+    filter: blur(100px); /* Blur effect */
+    border-radius: 50%; /* Circular shape */
+}
+
+body::before {
+    top: 100px; /* Position slightly out of the top left corner */
+    left: -100px; /* Position slightly out of the top left corner */
+}
+
+body::after {
+    top: 100px; /* Position slightly out of the top right corner */
+    right: -100px; /* Position slightly out of the top right corner */
+}
+
+
+
+/* ///////// */
+
+
+/* Button on top of the Input */
+.wrapper {
+    /* width: 400px; */
+    max-width: 100%;
+    position: relative;
+}
+
+.wrapper input {
+
+    margin-left: 5%;
+    margin-top:2%;
+    /* Rectangle 367 */
+    margin-right: 25%;
+    width:90%;
+    height:10%;
+    background: #D9D9D9;
+    box-shadow: 0px 2.975px 2.975px rgba(0, 0, 0, 0.25);
+    border-radius: 28.5938px;
+    padding: 2%;  
+}
+
+.wrapper button {
+    
+    background: rgb(141, 140, 140);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    height: 50%;
+    
+    position: absolute;
+    top: 35%;
+    right: 0;
+    transform: translateX(-130%);
+}
+
+html body {
+    background-color: #000000;
+}
